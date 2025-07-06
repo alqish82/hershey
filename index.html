@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mənim Link Saytım</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #667eea;
+            border: 4px solid #667eea;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .profile-bio {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .link-button {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-button:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .link-button:active {
+            transform: translateY(0);
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #667eea;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .profile-name {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profil Bölməsi -->
+        <div class="profile-image">
+            👤
+        </div>
+        <h1 class="profile-name">Sizin Adınız</h1>
+        <p class="profile-bio">Bu yerdə özünüz haqqında qısa məlumat yazın. Məsələn: Developer, Designer, Content Creator</p>
+
+        <!-- Link Düymələri -->
+        <a href="#" class="link-button" onclick="openLink('https://instagram.com/yourusername')">
+            📱 Instagram
+        </a>
+        
+        <a href="#" class="link-button" onclick="openLink('https://youtube.com/yourchannel')">
+            🎥 YouTube
+        </a>
+        
+        <a href="#" class="link-button" onclick="openLink('https://linkedin.com/in/yourprofile')">
+            💼 LinkedIn
+        </a>
+        
+        <a href="#" class="link-button" onclick="openLink('https://github.com/yourusername')">
+            💻 GitHub
+        </a>
+        
+        <a href="#" class="link-button" onclick="openLink('https://yourwebsite.com')">
+            🌐 Şəxsi Sayt
+        </a>
+        
+        <a href="#" class="link-button" onclick="openLink('mailto:your@email.com')">
+            ✉️ E-mail
+        </a>
+
+        <!-- Sosial Media Linkləri -->
+        <div class="social-links">
+            <a href="https://facebook.com/yourpage" class="social-link" target="_blank">📘</a>
+            <a href="https://twitter.com/yourusername" class="social-link" target="_blank">🐦</a>
+            <a href="https://telegram.me/yourusername" class="social-link" target="_blank">✈️</a>
+        </div>
+    </div>
+
+    <script>
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+
+        // Animasiya effekti
+        window.addEventListener('load', function() {
+            const buttons = document.querySelectorAll('.link-button');
+            buttons.forEach((button, index) => {
+                button.style.opacity = '0';
+                button.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    button.style.transition = 'all 0.5s ease';
+                    button.style.opacity = '1';
+                    button.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
